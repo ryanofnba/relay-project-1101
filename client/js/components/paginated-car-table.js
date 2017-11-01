@@ -2,6 +2,7 @@ import React from 'react';
 import { createPaginationContainer, graphql } from 'react-relay';
 
 import { CarViewRowContainer } from './car-view-row';
+import { CarEditRowContainer } from './car-edit-row';
 
 export class CarTable extends React.Component {
 
@@ -22,6 +23,27 @@ export class CarTable extends React.Component {
       },
     },
   }
+
+  onEditCar = id => {
+    //Sets the editing id to true
+    this.setState({
+      cars: {
+        id
+      }
+    });
+  };
+
+  onCancelCar = id => {
+    this.setState({
+      cars: {}
+    });
+  };
+
+  onSubmitCar = (car) => {
+    this.props.onUpdateCar(car).then(this.setState({
+      cars: {}
+    }));
+  };
 
   loadPrev = () => {
 
@@ -86,8 +108,18 @@ export class CarTable extends React.Component {
               <tr><td colSpan="6">There are no cars.</td></tr>;
             } else {
               carEdges.slice(startIndex, endIndex).map( ({ node: car }) => do {
+            (
+                this.state.cars && this.state.cars.id === car.id
+            ) ?
+              <CarEditRowContainer key={car.id} car={car}
+                onCancelCar={this.onCancelCar}
+                onSubmitCar= {this.onSubmitCar}
+                />
+            :
                 <CarViewRowContainer key={car.id} car={car}
-                  onDeleteCar={this.props.onDeleteCar} />;
+                  onDeleteCar={this.props.onDeleteCar}
+                  onEditCar = {this.onEditCar}
+                  />;
               });
             }
           }}
@@ -149,6 +181,7 @@ export const PaginatedCarTableContainer = createPaginationContainer(
             id
             price
             ...carViewRow_car
+            ...carEditRow_car
           }
           cursor
         }

@@ -19,9 +19,14 @@ export class CarTable extends React.Component {
       </thead>
       <tbody>
         {this.props.viewer.cars.edges.map(
-          ({ node: car }) => (<CarViewRowContainer
+          ({ node: car }) => ( this.state.id === car.id ?
+                  <div></div>
+                  :
+              <CarViewRowContainer
             key={car.id} car={car} carMake={car}
-            onDeleteCar={this.props.onDeleteCar} />)
+            onDeleteCar={this.props.onDeleteCar}
+            onEditCar = {this.onEditCar}/>
+          )
         )}
       </tbody>
       <tfoot>
