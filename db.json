@@ -31,6 +31,14 @@
       "color": "pink",
       "price": 5,
       "id": 5
+    },
+    {
+      "make": "asd",
+      "model": "asd",
+      "year": 52352,
+      "color": "wsd",
+      "price": 234214,
+      "id": 7
     }
   ],
   "owners": [
