@@ -9,27 +9,19 @@
       "price": 21000
     },
     {
-      "make": "Nissan",
-      "model": "Maxima",
-      "year": 2016,
-      "color": "Gray",
-      "price": 4000,
-      "id": 4
-    },
-    {
-      "make": "asd",
-      "model": "asd",
+      "make": "Chevrolet",
+      "model": "Accord",
       "year": 1900,
-      "color": "asd",
-      "price": 4000,
+      "color": "black",
+      "price": 20000,
       "id": 5
     },
     {
       "make": "Toyota",
-      "model": "RAV4",
+      "model": "Maxima",
       "year": 1900,
-      "color": "black",
-      "price": 30000,
+      "color": "green",
+      "price": 4000,
       "id": 6
     }
   ],
