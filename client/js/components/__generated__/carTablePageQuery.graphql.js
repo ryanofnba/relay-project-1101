@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 1bd47862d288afab937b4fb495b748ae
+ * @relayHash 1df6129aac7720c699d8d862007f5436
  */
 
 /* eslint-disable */
@@ -35,6 +35,7 @@ fragment paginatedCarTable_viewer on Viewer {
     edges {
       node {
         id
+        price
         ...carViewRow_car
         __typename
       }
@@ -160,6 +161,13 @@ const batch /*: ConcreteBatch*/ = {
                         "kind": "ScalarField",
                         "alias": null,
                         "args": null,
+                        "name": "price",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
                         "name": "make",
                         "storageKey": null
                       },
@@ -182,13 +190,6 @@ const batch /*: ConcreteBatch*/ = {
                         "alias": null,
                         "args": null,
                         "name": "color",
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "price",
                         "storageKey": null
                       },
                       {
@@ -281,7 +282,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query carTablePageQuery {\n  viewer {\n    id\n    ...carTableHome_viewer\n  }\n}\n\nfragment carTableHome_viewer on Viewer {\n  id\n  ...paginatedCarTable_viewer\n}\n\nfragment paginatedCarTable_viewer on Viewer {\n  cars(first: 3) {\n    edges {\n      node {\n        id\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    pageInfo {\n      startCursor\n      endCursor\n      hasNextPage\n      hasPreviousPage\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
+  "text": "query carTablePageQuery {\n  viewer {\n    id\n    ...carTableHome_viewer\n  }\n}\n\nfragment carTableHome_viewer on Viewer {\n  id\n  ...paginatedCarTable_viewer\n}\n\nfragment paginatedCarTable_viewer on Viewer {\n  cars(first: 3) {\n    edges {\n      node {\n        id\n        price\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    pageInfo {\n      startCursor\n      endCursor\n      hasNextPage\n      hasPreviousPage\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
 };
 
 module.exports = batch;

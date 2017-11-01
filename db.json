@@ -9,14 +9,6 @@
       "price": 21000
     },
     {
-      "make": "Ford",
-      "model": "T",
-      "year": 2013,
-      "color": "red",
-      "price": 123,
-      "id": 2
-    },
-    {
       "make": "Nissan",
       "model": "Maxima",
       "year": 2016,
@@ -25,20 +17,20 @@
       "id": 4
     },
     {
-      "make": "Honda",
-      "model": "Civic",
+      "make": "asd",
+      "model": "asd",
       "year": 1900,
-      "color": "pink",
-      "price": 5,
+      "color": "asd",
+      "price": 4000,
       "id": 5
     },
     {
-      "make": "asd",
-      "model": "asd",
-      "year": 52352,
-      "color": "wsd",
-      "price": 234214,
-      "id": 7
+      "make": "fssf",
+      "model": "fafs",
+      "year": 1900,
+      "color": "adsdsa",
+      "price": 1000,
+      "id": 6
     }
   ],
   "owners": [
