@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 13ef9f66b3db471d8f7cdb8d1d1694b2
+ * @relayHash 05ccafbcb2bd9bd48980ace20bcdc9c6
  */
 
 /* eslint-disable */
@@ -12,6 +12,9 @@ import type {ConcreteBatch} from 'relay-runtime';
 export type carHomeQueryResponse = {|
   +viewer: ?{|
     +id: string;
+    +makes: ?$ReadOnlyArray<?string>;
+    +models: ?$ReadOnlyArray<?string>;
+    +colors: ?$ReadOnlyArray<?string>;
   |};
 |};
 */
@@ -21,6 +24,9 @@ export type carHomeQueryResponse = {|
 query carHomeQuery {
   viewer {
     id
+    makes
+    models
+    colors
     ...carTable_viewer
   }
 }
@@ -78,6 +84,27 @@ const batch /*: ConcreteBatch*/ = {
             "storageKey": null
           },
           {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "makes",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "models",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "colors",
+            "storageKey": null
+          },
+          {
             "kind": "FragmentSpread",
             "name": "carTable_viewer",
             "args": null
@@ -111,6 +138,27 @@ const batch /*: ConcreteBatch*/ = {
             "alias": null,
             "args": null,
             "name": "id",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "makes",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "models",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "colors",
             "storageKey": null
           },
           {
@@ -276,7 +324,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query carHomeQuery {\n  viewer {\n    id\n    ...carTable_viewer\n  }\n}\n\nfragment carTable_viewer on Viewer {\n  cars(first: 100) {\n    edges {\n      node {\n        id\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
+  "text": "query carHomeQuery {\n  viewer {\n    id\n    makes\n    models\n    colors\n    ...carTable_viewer\n  }\n}\n\nfragment carTable_viewer on Viewer {\n  cars(first: 100) {\n    edges {\n      node {\n        id\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
 };
 
 module.exports = batch;

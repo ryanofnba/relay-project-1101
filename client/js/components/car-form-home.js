@@ -17,7 +17,8 @@ export class CarFormHome extends React.Component {
   render() {
     return <CarForm
       onSubmitCar={this.reactInsertCar}
-      onShowCarTable={this.props.onShowCarTable} />;
+      onShowCarTable={this.props.onShowCarTable}
+      viewer={this.props.viewer} />;
   }
 
 }
@@ -26,6 +27,7 @@ export const CarFormHomeContainer = createFragmentContainer(
   CarFormHome, graphql`
     fragment carFormHome_viewer on Viewer {
       id
+      makes models colors
     }
   `
 );

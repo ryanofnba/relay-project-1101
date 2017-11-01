@@ -34,13 +34,23 @@ export class CarForm extends React.Component {
     return <form>
       <div>
         <label htmlFor="make-input">Make</label>
-        <input type="text" id="make-input" name="make"
-          value={this.state.make} onChange={this.onChange} />
+        <select name="make"
+          value={this.state.make} onChange={this.onChange} >
+          <option value=''>Select make</option>
+          {this.props.viewer.makes.map((make, index) =>
+            <option key={index} value={make}>{make}</option>
+          )}
+        </select>
       </div>
       <div>
         <label htmlFor="model-input">Model</label>
-        <input type="text" id="model-input" name="model"
-          value={this.state.model} onChange={this.onChange} />
+        <select name="model"
+          value={this.state.model} onChange={this.onChange} >
+          <option value=''>Select model</option>
+          {this.props.viewer.models.map((model, index) =>
+            <option key={index} value={model}>{model}</option>
+          )}
+        </select>
       </div>
       <div>
         <label htmlFor="year-input">Year</label>
@@ -49,8 +59,13 @@ export class CarForm extends React.Component {
       </div>
       <div>
         <label htmlFor="color-input">Color</label>
-        <input type="text" id="color-input" name="color"
-          value={this.state.color} onChange={this.onChange} />
+        <select name="color"
+          value={this.state.color} onChange={this.onChange} >
+          <option value=''>Select color</option>
+          {this.props.viewer.colors.map((color, index) =>
+            <option key={index} value={color}>{color}</option>
+          )}
+        </select>
       </div>
       <div>
         <label htmlFor="price-input">Price</label>

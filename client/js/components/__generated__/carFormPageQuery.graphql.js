@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 68694ca6720471d5ae1e4b21c764c557
+ * @relayHash 877d13c72157cd1277cca2367fba7cdf
  */
 
 /* eslint-disable */
@@ -27,6 +27,9 @@ query carFormPageQuery {
 
 fragment carFormHome_viewer on Viewer {
   id
+  makes
+  models
+  colors
 }
 */
 
@@ -87,13 +90,34 @@ const batch /*: ConcreteBatch*/ = {
             "args": null,
             "name": "id",
             "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "makes",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "models",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "colors",
+            "storageKey": null
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "query carFormPageQuery {\n  viewer {\n    id\n    ...carFormHome_viewer\n  }\n}\n\nfragment carFormHome_viewer on Viewer {\n  id\n}\n"
+  "text": "query carFormPageQuery {\n  viewer {\n    id\n    ...carFormHome_viewer\n  }\n}\n\nfragment carFormHome_viewer on Viewer {\n  id\n  makes\n  models\n  colors\n}\n"
 };
 
 module.exports = batch;
