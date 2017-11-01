@@ -17,12 +17,20 @@
       "id": 2
     },
     {
-      "make": "a",
-      "model": "a",
+      "make": "Nissan",
+      "model": "Maxima",
+      "year": 2016,
+      "color": "Gray",
+      "price": 4000,
+      "id": 4
+    },
+    {
+      "make": "Honda",
+      "model": "Civic",
       "year": 1900,
-      "color": "a",
-      "price": 0,
-      "id": 3
+      "color": "pink",
+      "price": 5,
+      "id": 5
     }
   ],
   "owners": [
@@ -154,6 +162,14 @@
       "size": "b",
       "quantity": 0,
       "id": 13
+    },
+    {
+      "name": "asd",
+      "description": "asd",
+      "color": "asd",
+      "size": "asd",
+      "quantity": 241241,
+      "id": 14
     }
   ],
   "people": [
