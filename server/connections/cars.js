@@ -7,12 +7,15 @@ export const {
   connectionType: carConnectionType,
   edgeType: carEdgeType
 } = connectionDefinitions({
-  
+
   name: 'Cars',
   nodeType: carType,
 
   connectionFields: () => ({
     totalCount: {
+      type: GraphQLInt,
+    },
+    totalPrice: {
       type: GraphQLInt,
     },
   }),

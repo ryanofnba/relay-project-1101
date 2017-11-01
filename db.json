@@ -31,6 +31,14 @@
       "color": "black",
       "price": 0,
       "id": 5
+    },
+    {
+      "make": "Nissan",
+      "model": "Maxima",
+      "year": 1900,
+      "color": "green",
+      "price": 0,
+      "id": 6
     }
   ],
   "owners": [
