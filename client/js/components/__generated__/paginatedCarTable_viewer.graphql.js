@@ -18,6 +18,7 @@ export type paginatedCarTable_viewer = {|
       +cursor: string;
     |}>;
     +totalCount: ?number;
+    +totalPrice: ?number;
     +pageInfo: {|
       +startCursor: ?string;
       +endCursor: ?string;
@@ -120,6 +121,13 @@ const fragment /*: ConcreteFragment*/ = {
           "alias": null,
           "args": null,
           "name": "totalCount",
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "args": null,
+          "name": "totalPrice",
           "storageKey": null
         },
         {

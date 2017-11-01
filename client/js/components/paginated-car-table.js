@@ -120,12 +120,7 @@ export class CarTable extends React.Component {
               </div>
             </td>
           </tr>
-          <tr colSpan="6">Total Car Value: {
-              this.props.viewer.cars.edges.reduce((a, b) => {
-                  const num = !Number.isInteger(a) ? a.node.price : a;
-                  return num + b.node.price;
-              })
-          }</tr>
+          <tr colSpan="6">Total Car Value: {this.props.viewer.cars.totalPrice}</tr>
         </tfoot>
       </table>
     </div>;
@@ -153,6 +148,7 @@ export const PaginatedCarTableContainer = createPaginationContainer(
           cursor
         }
         totalCount
+        totalPrice
         pageInfo {
           startCursor
           endCursor

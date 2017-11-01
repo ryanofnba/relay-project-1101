@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 1df6129aac7720c699d8d862007f5436
+ * @relayHash b97cea9e8e932d3c807bdc7055f28888
  */
 
 /* eslint-disable */
@@ -42,6 +42,7 @@ fragment paginatedCarTable_viewer on Viewer {
       cursor
     }
     totalCount
+    totalPrice
     pageInfo {
       startCursor
       endCursor
@@ -220,6 +221,13 @@ const batch /*: ConcreteBatch*/ = {
                 "storageKey": null
               },
               {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "totalPrice",
+                "storageKey": null
+              },
+              {
                 "kind": "LinkedField",
                 "alias": null,
                 "args": null,
@@ -282,7 +290,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query carTablePageQuery {\n  viewer {\n    id\n    ...carTableHome_viewer\n  }\n}\n\nfragment carTableHome_viewer on Viewer {\n  id\n  ...paginatedCarTable_viewer\n}\n\nfragment paginatedCarTable_viewer on Viewer {\n  cars(first: 3) {\n    edges {\n      node {\n        id\n        price\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    pageInfo {\n      startCursor\n      endCursor\n      hasNextPage\n      hasPreviousPage\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
+  "text": "query carTablePageQuery {\n  viewer {\n    id\n    ...carTableHome_viewer\n  }\n}\n\nfragment carTableHome_viewer on Viewer {\n  id\n  ...paginatedCarTable_viewer\n}\n\nfragment paginatedCarTable_viewer on Viewer {\n  cars(first: 3) {\n    edges {\n      node {\n        id\n        price\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    totalPrice\n    pageInfo {\n      startCursor\n      endCursor\n      hasNextPage\n      hasPreviousPage\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
 };
 
 module.exports = batch;
