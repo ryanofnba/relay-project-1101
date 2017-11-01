@@ -23,6 +23,14 @@
       "color": "Gray",
       "price": 4000,
       "id": 4
+    },
+    {
+      "make": "Toyota",
+      "model": "RAV4",
+      "year": 1900,
+      "color": "black",
+      "price": 0,
+      "id": 5
     }
   ],
   "owners": [
