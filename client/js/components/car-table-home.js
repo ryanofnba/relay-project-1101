@@ -3,6 +3,7 @@ import { createFragmentContainer, graphql } from 'react-relay';
 
 import { PaginatedCarTableContainer } from './paginated-car-table';
 import { deleteCar as relayDeleteCar } from '../mutations/delete-car';
+import { updateCar as relayUpdateCar } from '../mutations/update-car';
 
 export class CarTableHome extends React.Component {
 
@@ -15,11 +16,21 @@ export class CarTableHome extends React.Component {
     );
   };
 
+  reactUpdateCar = car => {
+      return relayUpdateCar(
+          this.props.relay.environment,
+          this.props.viewer.id,
+          car
+      );
+  };
+
 
   render() {
     return <PaginatedCarTableContainer viewer={this.props.viewer}
       onDeleteCar={this.reactDeleteCar}
-      onCreateCar={this.props.onCreateCar} />;
+      onCreateCar={this.props.onCreateCar}
+      onUpdateCar ={this.reactUpdateCar}
+    />;
   }
 
 }
