@@ -120,7 +120,7 @@ export class CarTable extends React.Component {
               </div>
             </td>
           </tr>
-          <tr colSpan="6">Total Car Value: {this.props.viewer.cars.totalPrice}</tr>
+          <tr><td colSpan="6">Total Car Value: {this.props.viewer.cars.totalPrice}</td></tr>
         </tfoot>
       </table>
     </div>;
