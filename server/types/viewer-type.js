@@ -1,4 +1,4 @@
-import { GraphQLObjectType } from 'graphql';
+import { GraphQLObjectType, GraphQLList, GraphQLString } from 'graphql';
 import { globalIdField, connectionArgs, connectionFromArray } from 'graphql-relay';
 
 import { widgetConnectionType } from '../connections/widgets';
@@ -15,6 +15,18 @@ export const viewerType = new GraphQLObjectType({
   description: 'User of the application',
   fields: () => ({
     id: globalIdField('Viewer'),
+    makes: {
+      type: new GraphQLList(GraphQLString),
+      resolve: () => ([ 'Toyota', 'Chevrolet', 'Nissan', 'Honda', 'GM', 'Ford', 'Tesla' ])
+    },
+    models: {
+      type: new GraphQLList(GraphQLString),
+      resolve: () => ([ 'RAV4', 'Volt', 'Maxima', 'Accord', 'T', 'Model S' ])
+    },
+    colors: {
+      type: new GraphQLList(GraphQLString),
+      resolve: () => ([ 'black', 'blue', 'red', 'green', 'gold', 'grey' ])
+    },
     widgets: {
       type: widgetConnectionType,
       description: 'get all of the widgets',

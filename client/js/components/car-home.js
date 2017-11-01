@@ -17,12 +17,13 @@ export class CarHome extends React.Component {
       <h2>Cars Tool</h2>
 
       <QueryRenderer
-      
+
         environment={environment}
         query={graphql`
           query carHomeQuery {
             viewer {
               id
+              makes models colors
               ...carTable_viewer
             }
           }
@@ -44,13 +45,13 @@ export class CarHome extends React.Component {
               props.viewer.id,
               carId,
             );
-          };          
+          };
 
           if (props) {
             return <div>
               <CarTableContainer viewer={props.viewer}
                 onDeleteCar={reactDeleteCar} />
-              <CarForm onSubmitCar={reactInsertCar} />
+              <CarForm onSubmitCar={reactInsertCar} viewer={props.viewer} />
             </div>;
           } else {
             return <div>Loading...</div>;

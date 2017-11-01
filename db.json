@@ -23,6 +23,22 @@
       "color": "a",
       "price": 0,
       "id": 3
+    },
+    {
+      "make": "Chevrolet",
+      "model": "Volt",
+      "year": 2017,
+      "color": "black",
+      "price": 40000,
+      "id": 4
+    },
+    {
+      "make": "Chevrolet",
+      "model": "Volt",
+      "year": 1900,
+      "color": "blue",
+      "price": 0,
+      "id": 6
     }
   ],
   "owners": [
