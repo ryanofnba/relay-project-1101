@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash eacf167ce0fd943fabbadcc0bfbc841c
+ * @relayHash 35c068723738642d89ed66658b69e280
  */
 
 /* eslint-disable */
@@ -31,6 +31,7 @@ fragment paginatedCarTable_viewer_1G22uz on Viewer {
     edges {
       node {
         id
+        price
         ...carViewRow_car
         __typename
       }
@@ -187,6 +188,13 @@ const batch /*: ConcreteBatch*/ = {
                         "kind": "ScalarField",
                         "alias": null,
                         "args": null,
+                        "name": "price",
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "args": null,
                         "name": "make",
                         "storageKey": null
                       },
@@ -209,13 +217,6 @@ const batch /*: ConcreteBatch*/ = {
                         "alias": null,
                         "args": null,
                         "name": "color",
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "price",
                         "storageKey": null
                       },
                       {
@@ -321,7 +322,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query paginatedCarTableQuery(\n  $count: Int!\n  $cursor: String\n) {\n  viewer {\n    ...paginatedCarTable_viewer_1G22uz\n    id\n  }\n}\n\nfragment paginatedCarTable_viewer_1G22uz on Viewer {\n  cars(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    pageInfo {\n      startCursor\n      endCursor\n      hasNextPage\n      hasPreviousPage\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
+  "text": "query paginatedCarTableQuery(\n  $count: Int!\n  $cursor: String\n) {\n  viewer {\n    ...paginatedCarTable_viewer_1G22uz\n    id\n  }\n}\n\nfragment paginatedCarTable_viewer_1G22uz on Viewer {\n  cars(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        price\n        ...carViewRow_car\n        __typename\n      }\n      cursor\n    }\n    totalCount\n    pageInfo {\n      startCursor\n      endCursor\n      hasNextPage\n      hasPreviousPage\n    }\n  }\n}\n\nfragment carViewRow_car on Car {\n  id\n  make\n  model\n  year\n  color\n  price\n}\n"
 };
 
 module.exports = batch;

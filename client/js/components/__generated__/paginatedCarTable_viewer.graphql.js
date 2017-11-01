@@ -13,6 +13,7 @@ export type paginatedCarTable_viewer = {|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
         +id: string;
+        +price: ?number;
       |};
       +cursor: string;
     |}>;
@@ -87,6 +88,13 @@ const fragment /*: ConcreteFragment*/ = {
                   "alias": null,
                   "args": null,
                   "name": "id",
+                  "storageKey": null
+                },
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "args": null,
+                  "name": "price",
                   "storageKey": null
                 },
                 {

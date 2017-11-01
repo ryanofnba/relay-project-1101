@@ -67,11 +67,11 @@ export class CarTable extends React.Component {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Description</th>
+            <th>Make</th>
+            <th>Model</th>
             <th>Color</th>
-            <th>Size</th>
-            <th>Quantity</th>
+            <th>Year</th>
+            <th>Price</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -120,6 +120,12 @@ export class CarTable extends React.Component {
               </div>
             </td>
           </tr>
+          <tr colSpan="6">Total Car Value: {
+              this.props.viewer.cars.edges.reduce((a, b) => {
+                  const num = !Number.isInteger(a) ? a.node.price : a;
+                  return num + b.node.price;
+              })
+          }</tr>
         </tfoot>
       </table>
     </div>;
@@ -141,6 +147,7 @@ export const PaginatedCarTableContainer = createPaginationContainer(
         edges {
           node {
             id
+            price
             ...carViewRow_car
           }
           cursor

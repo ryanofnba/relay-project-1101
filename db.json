@@ -9,14 +9,6 @@
       "price": 21000
     },
     {
-      "make": "Ford",
-      "model": "T",
-      "year": 2013,
-      "color": "red",
-      "price": 123,
-      "id": 2
-    },
-    {
       "make": "Nissan",
       "model": "Maxima",
       "year": 2016,
@@ -25,21 +17,13 @@
       "id": 4
     },
     {
-      "make": "Toyota",
-      "model": "RAV4",
+      "make": "asd",
+      "model": "asd",
       "year": 1900,
-      "color": "black",
-      "price": 0,
+      "color": "asd",
+      "price": 4000,
       "id": 5
     },
-    {
-      "make": "Nissan",
-      "model": "Maxima",
-      "year": 1900,
-      "color": "green",
-      "price": 0,
-      "id": 6
-    }
   ],
   "owners": [
     {
